@@ -10,4 +10,5 @@ import Foundation
 
 protocol NetworkManagerProtocol {
     func fetchAlbums(completion: @escaping ([AlbumModel]) -> ())
+    func fetchPhotos(completion: @escaping ([PhotoModel]) -> ())
 }

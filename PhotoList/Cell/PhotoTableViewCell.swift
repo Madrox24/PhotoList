@@ -1,5 +1,5 @@
 //
-//  AlbumTableViewCell.swift
+//  PhotoTableViewCell.swift
 //  PhotoList
 //
 //  Created by Robert Moryson on 20/04/2020.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AlbumTableViewCell: UITableViewCell {
+class PhotoTableViewCell: UITableViewCell {
 
     @IBOutlet weak var albumName: UILabel!
     @IBOutlet weak var photoName: UILabel!

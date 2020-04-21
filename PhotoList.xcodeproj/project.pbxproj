@@ -17,7 +17,8 @@
 		B1BC04C4244DAE0000207D61 /* AlbumNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1BC04C3244DAE0000207D61 /* AlbumNetworkManager.swift */; };
 		B1BC04C6244DB09C00207D61 /* AlbumModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1BC04C5244DB09C00207D61 /* AlbumModel.swift */; };
 		B1BC04C8244DC5FB00207D61 /* AlbumTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1BC04C7244DC5FB00207D61 /* AlbumTableViewController.swift */; };
-		B1BC04CB244DC75900207D61 /* AlbumTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1BC04CA244DC75900207D61 /* AlbumTableViewCell.swift */; };
+		B1BC04CB244DC75900207D61 /* PhotoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1BC04CA244DC75900207D61 /* PhotoTableViewCell.swift */; };
+		E1AD5A87244F058500F02805 /* PhotoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1AD5A86244F058500F02805 /* PhotoModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,7 +34,8 @@
 		B1BC04C3244DAE0000207D61 /* AlbumNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumNetworkManager.swift; sourceTree = "<group>"; };
 		B1BC04C5244DB09C00207D61 /* AlbumModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumModel.swift; sourceTree = "<group>"; };
 		B1BC04C7244DC5FB00207D61 /* AlbumTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumTableViewController.swift; sourceTree = "<group>"; };
-		B1BC04CA244DC75900207D61 /* AlbumTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumTableViewCell.swift; sourceTree = "<group>"; };
+		B1BC04CA244DC75900207D61 /* PhotoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoTableViewCell.swift; sourceTree = "<group>"; };
+		E1AD5A86244F058500F02805 /* PhotoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +88,7 @@
 				B1BC04C1244DA49300207D61 /* NetworkManagerProtocol.swift */,
 				B1BC04C3244DAE0000207D61 /* AlbumNetworkManager.swift */,
 				B1BC04C5244DB09C00207D61 /* AlbumModel.swift */,
+				E1AD5A86244F058500F02805 /* PhotoModel.swift */,
 			);
 			path = NetworkManager;
 			sourceTree = "<group>";
@@ -93,7 +96,7 @@
 		B1BC04C9244DC73800207D61 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				B1BC04CA244DC75900207D61 /* AlbumTableViewCell.swift */,
+				B1BC04CA244DC75900207D61 /* PhotoTableViewCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -169,6 +172,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E1AD5A87244F058500F02805 /* PhotoModel.swift in Sources */,
 				B1BC04B1244DA3FF00207D61 /* ViewController.swift in Sources */,
 				B1BC04C6244DB09C00207D61 /* AlbumModel.swift in Sources */,
 				B1BC04AD244DA3FF00207D61 /* AppDelegate.swift in Sources */,
@@ -176,7 +180,7 @@
 				B1BC04C2244DA49300207D61 /* NetworkManagerProtocol.swift in Sources */,
 				B1BC04AF244DA3FF00207D61 /* SceneDelegate.swift in Sources */,
 				B1BC04C8244DC5FB00207D61 /* AlbumTableViewController.swift in Sources */,
-				B1BC04CB244DC75900207D61 /* AlbumTableViewCell.swift in Sources */,
+				B1BC04CB244DC75900207D61 /* PhotoTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
