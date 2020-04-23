@@ -38,15 +38,38 @@ class AlbumTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         guard let photos = photos else { return 0 }
-        return photos.count
+        let count = photos.filter { $0.albumId == section + 1 }.count
+        return count
+    }
+    
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return albums?[section].title
+        //let index = albums!.firstIndex(where: { $0.id == photos![indexPath.row].albumId })
+        //cell.albumName.text = albums?[index!].title
+    }
+    
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        guard let albums = albums else { return 0 }
+        return albums.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "PhotoCell", for: indexPath) as! PhotoTableViewCell
-        let index = albums!.firstIndex(where: { $0.id == photos![indexPath.row].albumId })
-        cell.albumName.text = albums?[index!].title
-        cell.photoName.text = photos?[indexPath.row].title
-        networkManager.fetchThumbnail(url: (photos?[indexPath.row].thumbnailUrl)!) { image in
+        var cellID: String
+        if indexPath.row%2 == 0 {
+            cellID = "PhotoCell"
+        } else {
+            cellID = "PhotoCell2"
+        }
+        
+        var currentRow = 0
+        for section in 0..<indexPath.section {
+                currentRow += tableView.numberOfRows(inSection: section)
+        }
+        currentRow += indexPath.row
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellID, for: indexPath) as! PhotoTableViewCell
+        cell.photoName.text = photos?[currentRow].title
+        networkManager.fetchThumbnail(url: (photos?[currentRow].thumbnailUrl)!) { image in
             DispatchQueue.main.async {
                 cell.photo.image = image
             }
@@ -56,7 +79,7 @@ class AlbumTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 91.0
+        return 75
     }
 
 }
