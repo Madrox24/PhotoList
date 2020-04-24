@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B16297DF2452F822007065E7 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B16297DE2452F822007065E7 /* UIViewController+Extension.swift */; };
 		B1BC04AD244DA3FF00207D61 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1BC04AC244DA3FF00207D61 /* AppDelegate.swift */; };
 		B1BC04AF244DA3FF00207D61 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1BC04AE244DA3FF00207D61 /* SceneDelegate.swift */; };
-		B1BC04B1244DA3FF00207D61 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1BC04B0244DA3FF00207D61 /* ViewController.swift */; };
 		B1BC04B4244DA3FF00207D61 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B1BC04B2244DA3FF00207D61 /* Main.storyboard */; };
 		B1BC04B6244DA40000207D61 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B1BC04B5244DA40000207D61 /* Assets.xcassets */; };
 		B1BC04B9244DA40000207D61 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B1BC04B7244DA40000207D61 /* LaunchScreen.storyboard */; };
@@ -22,10 +22,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B16297DE2452F822007065E7 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		B1BC04A9244DA3FF00207D61 /* PhotoList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhotoList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1BC04AC244DA3FF00207D61 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B1BC04AE244DA3FF00207D61 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		B1BC04B0244DA3FF00207D61 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		B1BC04B3244DA3FF00207D61 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B1BC04B5244DA40000207D61 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B1BC04B8244DA40000207D61 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,6 +49,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B16297DC2452F29D007065E7 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				B1BC04C7244DC5FB00207D61 /* AlbumTableViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		B16297DD2452F2BF007065E7 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				B1BC04B2244DA3FF00207D61 /* Main.storyboard */,
+				B1BC04B7244DA40000207D61 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		B16297E02452F82E007065E7 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				B16297DE2452F822007065E7 /* UIViewController+Extension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		B1BC04A0244DA3FF00207D61 = {
 			isa = PBXGroup;
 			children = (
@@ -68,15 +93,14 @@
 		B1BC04AB244DA3FF00207D61 /* PhotoList */ = {
 			isa = PBXGroup;
 			children = (
+				B16297DC2452F29D007065E7 /* ViewController */,
+				B16297DD2452F2BF007065E7 /* Storyboard */,
 				B1BC04C9244DC73800207D61 /* Cell */,
 				B1BC04C0244DA43F00207D61 /* NetworkManager */,
+				B16297E02452F82E007065E7 /* Extension */,
 				B1BC04AC244DA3FF00207D61 /* AppDelegate.swift */,
 				B1BC04AE244DA3FF00207D61 /* SceneDelegate.swift */,
-				B1BC04C7244DC5FB00207D61 /* AlbumTableViewController.swift */,
-				B1BC04B0244DA3FF00207D61 /* ViewController.swift */,
-				B1BC04B2244DA3FF00207D61 /* Main.storyboard */,
 				B1BC04B5244DA40000207D61 /* Assets.xcassets */,
-				B1BC04B7244DA40000207D61 /* LaunchScreen.storyboard */,
 				B1BC04BA244DA40000207D61 /* Info.plist */,
 			);
 			path = PhotoList;
@@ -172,8 +196,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B16297DF2452F822007065E7 /* UIViewController+Extension.swift in Sources */,
 				E1AD5A87244F058500F02805 /* PhotoModel.swift in Sources */,
-				B1BC04B1244DA3FF00207D61 /* ViewController.swift in Sources */,
 				B1BC04C6244DB09C00207D61 /* AlbumModel.swift in Sources */,
 				B1BC04AD244DA3FF00207D61 /* AppDelegate.swift in Sources */,
 				B1BC04C4244DAE0000207D61 /* AlbumNetworkManager.swift in Sources */,

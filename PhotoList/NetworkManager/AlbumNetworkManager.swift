@@ -47,6 +47,30 @@ class AlbumNetworkManager : NetworkManagerProtocol {
         }.resume()
     }
     
+    func fetchAlbumsAndPhotos(completion: @escaping ([AlbumModel], [PhotoModel]) -> ()) {
+        let group = DispatchGroup()
+        
+        var albums: [AlbumModel] = []
+        var photos: [PhotoModel] = []
+        
+        group.enter()
+        fetchAlbums { albumsData in
+            albums = albumsData
+            group.leave()
+        }
+        
+        group.enter()
+        fetchPhotos { photosData in
+            photos = photosData
+            group.leave()
+        }
+
+        // Add the observer when all the tasks in the group are completed.
+        group.notify(queue: .main) {
+            completion(albums, photos)
+        }
+    }
+    
     func fetchThumbnail(url: String, completion: @escaping (UIImage) -> ()) {
         
         guard let url = URL(string: url) else { return }
@@ -61,9 +85,4 @@ class AlbumNetworkManager : NetworkManagerProtocol {
         }.resume()
     }
     
-}
-
-enum jsonType {
-    case photo
-    case album
 }

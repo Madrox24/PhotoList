@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SafariServices
 
 class AlbumTableViewController: UITableViewController {
 
@@ -20,16 +21,17 @@ class AlbumTableViewController: UITableViewController {
     }
 
     func loadData() {
-        networkManager.fetchAlbums { albums in
-            print(albums[0])
-            self.albums = albums
-        }
+        showLoadingSpinner()
         
-        networkManager.fetchPhotos { photos in
-            print(photos[0])
+        networkManager.fetchAlbumsAndPhotos { (albums, photos) in
+            self.albums = albums
             self.photos = photos
+            
             DispatchQueue.main.async {
                 self.tableView.reloadData()
+                
+                //zamknięcie okna ładowania
+                if let vc = self.presentedViewController, vc is UIAlertController { self.dismiss(animated: false, completion: nil) }
             }
         }
     }
@@ -44,8 +46,6 @@ class AlbumTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return albums?[section].title
-        //let index = albums!.firstIndex(where: { $0.id == photos![indexPath.row].albumId })
-        //cell.albumName.text = albums?[index!].title
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -56,16 +56,12 @@ class AlbumTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         var cellID: String
         if indexPath.row%2 == 0 {
-            cellID = "PhotoCell"
+            cellID = "RightPhotoCell"
         } else {
-            cellID = "PhotoCell2"
+            cellID = "LeftPhotoCell"
         }
         
-        var currentRow = 0
-        for section in 0..<indexPath.section {
-                currentRow += tableView.numberOfRows(inSection: section)
-        }
-        currentRow += indexPath.row
+        let currentRow = realRowForMultipleSections(with: indexPath)
         
         let cell = tableView.dequeueReusableCell(withIdentifier: cellID, for: indexPath) as! PhotoTableViewCell
         cell.photoName.text = photos?[currentRow].title
@@ -78,8 +74,22 @@ class AlbumTableViewController: UITableViewController {
         return cell
     }
     
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 75
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let currentRow = realRowForMultipleSections(with: indexPath)
+        
+        let url = URL(string: photos![currentRow].url)
+        let vc = SFSafariViewController(url: url!)
+        present(vc, animated: true, completion: nil)
+    }
+    
+    func realRowForMultipleSections(with indexPath: IndexPath) -> Int {
+        var currentRow = 0
+        for section in 0..<indexPath.section {
+                currentRow += tableView.numberOfRows(inSection: section)
+        }
+        currentRow += indexPath.row
+        
+        return currentRow
     }
 
 }
