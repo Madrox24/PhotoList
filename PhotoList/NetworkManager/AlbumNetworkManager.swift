@@ -15,7 +15,7 @@ class AlbumNetworkManager : NetworkManagerProtocol {
         guard let url = URL(string: API_URL) else { return }
         
         let urlRequest = URLRequest(url: url)
-        URLSession.shared.dataTask(with: urlRequest) { (data, response, error) in
+        URLSession.shared.dataTask(with: urlRequest) { (data, _, error) in
         guard let data = data else { return }
 
             do {
@@ -34,7 +34,7 @@ class AlbumNetworkManager : NetworkManagerProtocol {
         guard let url = URL(string: API_URL) else { return }
         
         let urlRequest = URLRequest(url: url)
-        URLSession.shared.dataTask(with: urlRequest) { (data, response, error) in
+        URLSession.shared.dataTask(with: urlRequest) { (data, _, error) in
             guard let data = data else { return }
 
             do {
@@ -76,7 +76,7 @@ class AlbumNetworkManager : NetworkManagerProtocol {
         guard let url = URL(string: url) else { return }
         
         let urlRequest = URLRequest(url: url)
-        URLSession.shared.dataTask(with: urlRequest) { (data, response, error) in
+        URLSession.shared.dataTask(with: urlRequest) { (data, _, _) in
             guard let data = data else { return }
 
             let downloadedImage = UIImage(data: data)
