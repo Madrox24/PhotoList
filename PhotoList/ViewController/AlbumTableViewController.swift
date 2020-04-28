@@ -14,10 +14,23 @@ class AlbumTableViewController: UITableViewController {
     let networkManager = AlbumNetworkManager()
     var albums: [AlbumModel]?
     var photos: [PhotoModel]?
+    let reachability = try! Reachability()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadData()
+        
+        reachability.whenReachable = { _ in
+            self.loadData()
+        }
+        reachability.whenUnreachable = { _ in
+            self.alert(message: "Turn on internet connection to load data")
+        }
+        
+        do {
+            try reachability.startNotifier()
+        } catch {
+            print("Unable to start notifier")
+        }
     }
 
     func loadData() {

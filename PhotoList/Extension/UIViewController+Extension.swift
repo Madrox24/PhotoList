@@ -22,4 +22,13 @@ extension UIViewController {
         present(alert, animated: true, completion: nil)
     }
     
+    func alert(message: String, title: String = "") {
+        if let vc = self.presentedViewController, vc is UIAlertController { dismiss(animated: false, completion: nil) }
+        
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let OKAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alertController.addAction(OKAction)
+        self.present(alertController, animated: true, completion: nil)
+    }
+    
 }

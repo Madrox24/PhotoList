@@ -18,6 +18,7 @@
 		B1BC04C6244DB09C00207D61 /* AlbumModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1BC04C5244DB09C00207D61 /* AlbumModel.swift */; };
 		B1BC04C8244DC5FB00207D61 /* AlbumTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1BC04C7244DC5FB00207D61 /* AlbumTableViewController.swift */; };
 		B1BC04CB244DC75900207D61 /* PhotoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1BC04CA244DC75900207D61 /* PhotoTableViewCell.swift */; };
+		E150C050245859E0003B5599 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = E150C04F245859E0003B5599 /* Reachability.swift */; };
 		E1AD5A87244F058500F02805 /* PhotoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1AD5A86244F058500F02805 /* PhotoModel.swift */; };
 /* End PBXBuildFile section */
 
@@ -35,6 +36,7 @@
 		B1BC04C5244DB09C00207D61 /* AlbumModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumModel.swift; sourceTree = "<group>"; };
 		B1BC04C7244DC5FB00207D61 /* AlbumTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumTableViewController.swift; sourceTree = "<group>"; };
 		B1BC04CA244DC75900207D61 /* PhotoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoTableViewCell.swift; sourceTree = "<group>"; };
+		E150C04F245859E0003B5599 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		E1AD5A86244F058500F02805 /* PhotoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -102,6 +104,7 @@
 				B1BC04AE244DA3FF00207D61 /* SceneDelegate.swift */,
 				B1BC04B5244DA40000207D61 /* Assets.xcassets */,
 				B1BC04BA244DA40000207D61 /* Info.plist */,
+				E150C04F245859E0003B5599 /* Reachability.swift */,
 			);
 			path = PhotoList;
 			sourceTree = "<group>";
@@ -204,6 +207,7 @@
 				B1BC04C2244DA49300207D61 /* NetworkManagerProtocol.swift in Sources */,
 				B1BC04AF244DA3FF00207D61 /* SceneDelegate.swift in Sources */,
 				B1BC04C8244DC5FB00207D61 /* AlbumTableViewController.swift in Sources */,
+				E150C050245859E0003B5599 /* Reachability.swift in Sources */,
 				B1BC04CB244DC75900207D61 /* PhotoTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
